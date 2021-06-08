@@ -1,2 +1,2 @@
 # libraryDB
-DB sys for books 'n' libraries
+DB system for searching books and libraries
