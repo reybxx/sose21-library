@@ -1,28 +1,38 @@
-CREATE TABLE IF NOT EXISTS `libraries` (
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `name` varchar(20) NOT NULL,
-    PRIMARY KEY (`id`)
-    ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+create table patients
+(
+    name varchar(100) not null,
+    email varchar(50) not null,
+    id int not null auto_increment,
+    constraint id
+        primary key (id)
+    );
 
-INSERT INTO `libraries` (`id`, `name`) VALUES
-(1, 'Main Library'),
-(2, 'Berlin Library'),
-(3, 'Central Library');
+create table treatments
+(
+    id int not null auto_increment,
+    name varchar(100) not null,
+    constraint id
+        primary key (id)
+);
 
-CREATE TABLE IF NOT EXISTS `books` (
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `title` varchar(200) NOT NULL,
-    `library_id` int(11) DEFAULT NULL,
-    PRIMARY KEY (`id`),
-    KEY `name` (`title`),
-    KEY `FK_books_libraries` (`library_id`),
-    CONSTRAINT `FK_books_libraries` FOREIGN KEY (`library_id`) REFERENCES `libraries` (`id`)
-    ) ENGINE=InnoDB AUTO_INCREMENT=4576 DEFAULT CHARSET=utf8mb4;
+create table appointments
+(
+    id int not null auto_increment,
+    date datetime not null,
+    status varchar(20) not null,
+    treatments int not null,
+    patients int null,
+    constraint id
+        primary key (id),
+    constraint patients
+        foreign key (patients) references patients (id),
+    constraint treatments
+        foreign key (treatments) references treatments (id)
+);
 
-INSERT INTO `books` (`id`, `title`, `library_id`) VALUES
-(1, 'The old X', 3),
-(2, 'B', 1),
-(3, 'C', 2),
-(4, 'D', 1),
-(5, 'E', 3),
-(6, 'foo', 3);
+INSERT INTO `treatments` (`id`, `name`) VALUES
+(1, 'consultation'),
+(2, 'introductory session'),
+(3, 'group therapy'),
+(4, 'cognitive analytic therapy'),
+(5, 'family therapy');
