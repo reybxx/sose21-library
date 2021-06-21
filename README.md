@@ -7,7 +7,7 @@
 #### `$ node src/index.js add-treatment "treatment-name"`
 
 ### to delete a treatment:
-#### `$ node src/index.js delete-treatment "treatment name"`
+#### `$ node src/index.js delete-treatment "treatment-name"`
 
 ### to add a new patient:
 #### `$ node src/index.js add-patient "name" "email"`
