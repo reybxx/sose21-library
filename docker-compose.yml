@@ -9,7 +9,7 @@ services:
       - ./Dockerdir/db/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d:ro
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: library
+      MYSQL_DATABASE: office-managmement
 
 volumes:
   db-storage:
