@@ -1,5 +1,3 @@
-# sose21-library
-
 # How to
 
 ## to list all treatments:
