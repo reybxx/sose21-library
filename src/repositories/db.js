@@ -7,7 +7,7 @@ async function createConnectionPool() {
     host: '127.0.0.1',
     user: 'root',
     password: 'root',
-    database: 'library',
+    database: 'office-management',
     connectionLimit: 1,
   });
 }
